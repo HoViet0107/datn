@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\wordcloud.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:wordcloud.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\predictf.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:predictf.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\wordcloud.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:wordcloud.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\predictf.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:predictf.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|c:\\users\\admin\\documents\\edisk\\nam5\\datn\\ui\\appui\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F10681C8-BB00-4B2E-BE54-17F23BB62BFD}|AppUi.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WordCloud.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\WordCloud.xaml.cs",
+              "RelativeDocumentMoniker": "WordCloud.xaml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\WordCloud.xaml.cs",
+              "RelativeToolTip": "WordCloud.xaml.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAwFkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:18:25.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WordCloud.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\WordCloud.xaml",
+              "RelativeDocumentMoniker": "WordCloud.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\WordCloud.xaml",
+              "RelativeToolTip": "WordCloud.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-20T10:09:00.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "predictF.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\predictF.xaml",
+              "RelativeDocumentMoniker": "predictF.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\predictF.xaml",
+              "RelativeToolTip": "predictF.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-11T14:42:34.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "predictF.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\predictF.xaml.cs",
+              "RelativeDocumentMoniker": "predictF.xaml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\predictF.xaml.cs",
+              "RelativeToolTip": "predictF.xaml.cs",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAQwJgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T14:43:13.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAADwv9YAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T16:06:21.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-09T16:06:25.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-10T01:50:02.748Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

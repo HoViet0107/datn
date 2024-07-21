@@ -1,0 +1,59 @@
+﻿<Window x:Name="main" x:Class="AppUi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppUi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Cursor="Arrow" Closed="main_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="Recommend" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="getRevBtn" Content="GetReview" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="GetReviewsButton_Click" ContentStringFormat="getReBtn" AutomationProperties.Name="getRevBtn"/>
+                    <ListView x:Name="csvList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,52,0,10" HorizontalAlignment="Left" Width="147" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" SelectionChanged="CsvList_SelectionChanged">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Reload" Click="ReloadMenuItem_Click"/>
+                                <MenuItem Header="Delete" Click="DeleteMenuItem_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                    <Button x:Name="predictBtn" Content="Predict" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Height="28" Width="63" Click="PredictButton_Click"/>
+                    <DataGrid x:Name="csvDF" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="174,52,10,10">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Clear" Click="ClearCsvDF_Click"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                    <TextBox x:Name="prodUrl" HorizontalAlignment="Left" Margin="174,10,0,0" Text="https://tiki.vn/ao-thun-nam-co-be-vai-ca-sau-combo-2-ao-ez235-p22492292.html?itm_campaign=CTP_YPD_TKA_PLA_UNK_ALL_UNK_UNK_UNK_UNK_X.239055_Y.1821375_Z.3709800_CN.Ao-thun-nam-co-be-vai-ca-sau%2C-Combo-2-ao-%E2%80%93-EZ235-21%2F04%2F2023&amp;itm_medium=CPC&amp;itm_source=tiki-ads&amp;spid=22492294" VerticalAlignment="Top" Width="493" Height="28" FontSize="15"/>
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="700,10,0,0" VerticalAlignment="Top" Height="28" Width="63"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="CrawData" Margin="-2,-2,-19,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Cateory" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cateCbb" HorizontalAlignment="Left" Margin="96,16,0,0" VerticalAlignment="Top" Width="120" Height="27">
+                        <ComboBoxItem Content="dien-tu-dien-lanh"/>
+                        <ComboBoxItem Content="do-choi-me-be"/>
+                    </ComboBox>
+                    <Button x:Name="crawlBtn" Content="Crawl" HorizontalAlignment="Left" Margin="241,16,0,0" VerticalAlignment="Top" Width="54" Height="27" Click="crawlBtn_Click"/>
+                    <GroupBox Header="Train model" Margin="0,62,0,0">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Train model" Click="TrainMenuItem_Click"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
+                    </GroupBox>
+                    <Label Content="Accuracy: " HorizontalAlignment="Left" Margin="207,149,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

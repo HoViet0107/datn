@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "P4gO9s7bt8s=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\Documents\\EDISK\\nam5\\datn\\UI\\AppUi\\AppUi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

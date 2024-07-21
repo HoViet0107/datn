@@ -1,0 +1,43 @@
+﻿<Window x:Name="preForm" x:Class="AppUi.PredictF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PredictF" Height="420" Width="742"
+        Unloaded="PredictF_Unloaded"
+        Closed="preForm_Closed"
+        >
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Predict" Click="PredictMenuItem_Click"/>
+            <MenuItem Header="Reload" Click="ReloadMenuItem_Click"/>
+            <MenuItem Header="ShowWC" Click="ShowWordCloudMenuItem_Click"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid HorizontalAlignment="Left" Width="748" Cursor="Arrow">
+       
+        <!-- Hiển thị hình ảnh -->
+        <Image x:Name="imgPie" Width="500" Height="377" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="298,0,0,0" Stretch="UniformToFill"/>
+        <Label x:Name="_posCount" Content="Positive reviews  😊 :" Foreground="Green" FontSize="20" HorizontalAlignment="Left" Margin="9,59,0,0" VerticalAlignment="Top" Height="44" Width="218"/>
+        <Label x:Name="_neuCount" Content="Neutral reviews   😐 :" FontSize="20" HorizontalAlignment="Left" Margin="9,108,0,0" VerticalAlignment="Top" Height="44" Width="218" Foreground="#FFFFA900"/>
+        <Label Name="_negCount" Content="Negative reviews  😡:" Foreground="Red" FontSize="20" HorizontalAlignment="Left" Margin="9,157,0,0" VerticalAlignment="Top" Height="44" Width="218"/>
+        <Label x:Name="lblPosCount" Content="0" FontSize="20" HorizontalAlignment="Left" Margin="227,59,0,0" VerticalAlignment="Top" Height="44" Width="54"/>
+        <Label x:Name="lblNeuCount" Content="0" FontSize="20" HorizontalAlignment="Left" Margin="227,108,0,0" VerticalAlignment="Top" Height="44" Width="54"/>
+        <Label x:Name="lblNegCount" Content="0" FontSize="20" HorizontalAlignment="Left" Margin="227,157,0,0" VerticalAlignment="Top" Height="44" Width="54"/>
+        <Label Content="Rating Predict: " FontSize="20" HorizontalAlignment="Left" Margin="9,238,0,0" VerticalAlignment="Top" Height="44" Width="144"/>
+        <Label x:Name="ratinglbl" Content="0.0" FontSize="20" HorizontalAlignment="Left" Margin="154,238,0,0" VerticalAlignment="Top" Height="44" Width="38"/>
+        <Label x:Name="lblsuggest" Content="" FontSize="20" HorizontalAlignment="Left" Margin="28,287,0,0" VerticalAlignment="Top" Height="44" Width="292"/>
+        <Label Content="=>" FontSize="20" HorizontalAlignment="Left" Margin="5,287,0,0" VerticalAlignment="Top" Height="44" Width="37" RenderTransformOrigin="0.497,1.701">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.947"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="⭐" FontSize="35" HorizontalAlignment="Left" Margin="178,226,0,0" VerticalAlignment="Top" Height="44" Width="38"/>
+    </Grid>
+</Window>

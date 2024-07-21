@@ -1,0 +1,21 @@
+﻿<Window x:Class="AppUi.WordCloud"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppUi"
+        mc:Ignorable="d"
+        Closed="Window_Closed"
+        Title="WordCloud" Height="420" Width="800">
+    <Grid>
+        <RichTextBox x:Name="txtData" Margin="176,10,10,16">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <ListBox x:Name="txtList" HorizontalAlignment="Left" Height="378" Margin="10,10,0,0" VerticalAlignment="Top" Width="161" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="txtList_SelectionChanged"/>
+
+    </Grid>
+</Window>
