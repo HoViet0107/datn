@@ -161,6 +161,9 @@ def get_product_info(product_id):
 
 # ---- end - thực hiện lấy và lưu dữ liệu -----#
 
+
+
+
 # ------------- chuẩn hóa dữ liệu --------------
 from pyvi import ViTokenizer
 import re
@@ -302,6 +305,10 @@ def predict_process_data(data):
 
 # ---- end - chuẩn hóa dữ liệu -----------
 
+
+
+
+
 # def processing_data(data):
 #     #Standardize data
 #     data_frame = pd.DataFrame(data)
@@ -312,13 +319,15 @@ def predict_process_data(data):
 #     data_frame[0] = data_frame[0].apply(tokenizer)
 #     return data_frame[0]
 
+
+
 # --------- xử lý dữ liệu để tiến hành dự đoán
 
 # load mô hình TF-IDF
 # đã được huấn luyện trước đó, giúp biến đổi các văn bản thành dạng đặc trưng
 # số để có thể áp dụng các thuật toán học máy cho các tác vụ như phân loại, hồi quy, v.v.
 # Đường dẫn tương đối tới file tfidf_vectorizer.pk
-tf_file_path = os.path.join(os.path.dirname(__file__), 'model', 'tfidf_vectorizer.pk')
+tf_file_path = os.path.join(os.path.dirname(__file__), 'process/model/trained_model', 'tfidf_vectorizer.pk')
 #Load TF-IDF weight
 tf_idf = pickle.load(open(tf_file_path, 'rb'))
 
@@ -344,7 +353,7 @@ def predict(prod_id):
     processed_data = pd.DataFrame(columns=cols)
     processed_data['label'] = y_pred
     processed_data['content'] = data
-    # return processed_data
+    
     return processed_data
 def get_label_counts(processed_data):
     # Phân loại label thành các nhóm tương ứng
