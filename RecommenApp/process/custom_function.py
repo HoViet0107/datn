@@ -106,7 +106,7 @@ def get_all_reviews(product_id, spid):
         page += 1
         if page > last_page:
             break
-
+    print('Loaded')
     return all_reviews,reviews_count
 
 '''
@@ -384,35 +384,76 @@ def create_word_clouds(test_data):
     print(neg_word)
     print("Neutral words:")
     print(neu_word)
-
-    tfidf_pos = TfidfVectorizer(ngram_range=(1, 5), min_df=0.01, max_df=0.99, stop_words=wc_stop_ws, max_features=100,
-                                sublinear_tf=True, smooth_idf=True)
-    tfidf_neg = TfidfVectorizer(ngram_range=(1, 5), min_df=0.01, max_df=0.99, stop_words=wc_stop_ws, max_features=100,
-                                sublinear_tf=True, smooth_idf=True)
-    tfidf_neu = TfidfVectorizer(ngram_range=(1, 5), min_df=0.01, max_df=0.99, stop_words=wc_stop_ws, max_features=100,
-                                sublinear_tf=True, smooth_idf=True)
-
+    tfidf_pos, tfidf_neg, tfidf_neu = None, None, None
+    try:
+        tfidf_pos = TfidfVectorizer(ngram_range=(1, 5), min_df=0.05, max_df=0.9, stop_words=wc_stop_ws, max_features=100,
+                                    sublinear_tf=True, smooth_idf=True)
+        tfidf_neg = TfidfVectorizer(ngram_range=(1, 5), min_df=0.05, max_df=0.9, stop_words=wc_stop_ws, max_features=100,
+                                    sublinear_tf=True, smooth_idf=True)
+        tfidf_neu = TfidfVectorizer(ngram_range=(1, 5), min_df=0.05, max_df=0.9, stop_words=wc_stop_ws, max_features=100,
+                                    sublinear_tf=True, smooth_idf=True)
+    except Exception as e:
+        print(f"Cannot creating TF-IDF vectorizers: {e}")
+    
     tfidf_matrix_pos = create_tfidf_matrix(tfidf_pos, pos_word)
     tfidf_matrix_neg = create_tfidf_matrix(tfidf_neg, neg_word)
     tfidf_matrix_neu = create_tfidf_matrix(tfidf_neu, neu_word)
+    
+    feature_names_pos, feature_names_neg, feature_names_neu = [],[],[]
+    
+    try:
+        feature_names_pos = tfidf_pos.get_feature_names_out().tolist() if tfidf_matrix_pos is not None else []
+    except Exception as e:
+        print(f"Positive feature names empty")
+        feature_names_pos = []
+        
+    try:
+        feature_names_neg = tfidf_neg.get_feature_names_out().tolist() if tfidf_matrix_neg is not None else []
+    except Exception as e:
+        print(f"Positive feature names empty")
+        feature_names_neg = []
+        
+    try:   
+        feature_names_neu = tfidf_neu.get_feature_names_out().tolist() if tfidf_matrix_neu is not None else []
+    except Exception as e:
+        print(f"Positive feature names empty")
+        feature_names_neu = []
+    print(' end feature_names_')
+    if feature_names_pos is not None and len(feature_names_pos) > 0:
+        create_word_cloud(feature_names_pos, "Positive")
+    else:
+        print("No words available for Positive WordCloud. Skipping...")
 
-    feature_names_pos = tfidf_pos.get_feature_names_out() if tfidf_matrix_pos is not None else []
-    feature_names_neg = tfidf_neg.get_feature_names_out() if tfidf_matrix_neg is not None else []
-    feature_names_neu = tfidf_neu.get_feature_names_out() if tfidf_matrix_neu is not None else []
+    if feature_names_neg is not None and len(feature_names_neg) > 0:
+        create_word_cloud(feature_names_neg, "Negative")
+    else:
+        print("No words available for Negative WordCloud. Skipping...")
 
-    create_word_cloud(feature_names_pos, "Positive")
-    create_word_cloud(feature_names_neg, "Negative")
-    create_word_cloud(feature_names_neu, "Neutral")
+    if feature_names_neu is not None and len(feature_names_neu) > 0:
+        create_word_cloud(feature_names_neu, "Neutral")
+    else:
+        print("No words available for Neutral WordCloud. Skipping...")
 
 
 def create_tfidf_matrix(vectorizer, word_list):
-    if word_list.empty:
+    if word_list.empty or len(word_list) == 0:
+        print("No words available to process TF-IDF. Skipping...")
         return None
-    else:
-        return vectorizer.fit_transform(word_list)
+    try:
+        tfidf_matrix = vectorizer.fit_transform(word_list)
+        if tfidf_matrix.shape[1] == 0:
+            print("No terms remain after pruning. Try lowering min_df or increasing max_df.")
+            return None
+        return tfidf_matrix
+    except Exception as e:
+        print(f"Error creating TF-IDF matrix: {e}")
+        return None
 
 # common word in reviews data about specify product
 def save_feature_names_to_txt(feature_names, file_name):
+    if len(feature_names) == 0:
+        print(f"No features to save for {file_name}.")
+        return
     file_path = os.path.join('analyze', file_name+'.txt')
     try:
         with open(file_path, 'w', encoding='utf-8') as file:
@@ -423,24 +464,26 @@ def save_feature_names_to_txt(feature_names, file_name):
         print(f"An error occurred while saving feature names: {e}")
 
 def create_word_cloud(feature_names, sentiment):
-    print(f"{sentiment} Review :")
-    # print('cwc feature_names: ',feature_names)
+    
+    if not feature_names:
+        return
+    print(f"{sentiment} Reviews:")
+    
     save_feature_names_to_txt(feature_names, f'{sentiment} Reviews')
-    if len(feature_names) > 0:
-        try: 
-            cloud = " ".join(feature_names)
-            plt.figure(figsize=(12, 6))
-            plt.title(f"WordCloud for {sentiment} Reviews")
-            word_cloud = (wordcloud.WordCloud(max_words=30, background_color="black",
-                                            width=1200, height=600, mode="RGB").generate(str(cloud)))
-            plt.axis("off")
-            plt.imshow(word_cloud)
+    try: 
+        cloud = " ".join(feature_names)
+        plt.figure(figsize=(12, 6))
+        plt.title(f"WordCloud for {sentiment} Reviews")
+        word_cloud = (wordcloud.WordCloud(max_words=30, background_color="black",
+                                        width=1200, height=600, mode="RGB").generate(str(cloud)))
+        plt.axis("off")
+        plt.imshow(word_cloud)
 
-            img_path = os.path.join('img',f'{sentiment}_word_cloud.png')
-            plt.savefig(img_path)  
-            print(f"{sentiment} WordCloud saved at {img_path}")
-        except Exception as e:
-            print(f"An error occurred: {e}")
+        img_path = os.path.join('img',f'{sentiment}_word_cloud.png')
+        plt.savefig(img_path)  
+        print(f"{sentiment} WordCloud saved at {img_path}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
     print("--------------------------------------")
 
 '''

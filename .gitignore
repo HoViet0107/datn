@@ -11,3 +11,5 @@ venv/
 # Bỏ qua thư mục 
 .git/
 .idea/
+
+.gitignore
